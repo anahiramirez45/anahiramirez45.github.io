@@ -4,68 +4,41 @@
 <head>
 
   <meta charset="UTF-8">
-
-  <title>Area Codes</title>
-
+  <title>Number Check</title>
   <script type="text/javascript">
 
     /* <![CDATA[ */
-
-    function checkTheCode()
+    function checkTheNumber()
     {
+      var num = document.getElementById("theNumber").value;
       var msg = "";
-      var areaCode = document.getElementById("theCode").options[document.getElementById("theCode").selectedIndex].value;
-      switch (parseInt(areaCode))
-      {
-        case 617:
-          msg = "Boston's area code is " + areaCode;
-    
-        case 212:
-          msg = "Manhattan's area code is " + areaCode;
-    
-        case 415:
-          msg = "San Francisco's area code is " + areaCode;
-    
-        case 813:
-          msg = "Tampa's area code is " + areaCode;
-
-      }
       
-      alert(msg);
+      if (num >= 100)
 
+        msg = msg + "The number is greater than ";
+        msg = msg + "or equal to 100.";      
+
+      alert(msg);
     }
 
     /* ]]> */
 
   </script>
-
 </head>
 
 <body>
 
-Select a City:
+<h3>Number Checker</h3>
 
-<form action="AreaCodes.html" method="post" name="theForm"
-
-      onsubmit="checkTheCode(); return false;">
-
-  <select name="theCode" id="theCode">
-
-    <option value="">-- Select a City --</option>
-    <option value="617">Boston</option>
-    <option value="212">Manhattan</option>
-    <option value="415">San Francisco</option>
-    <option value="813">Tampa</option>
-
-  </select>
+<form action="NumberCheck.html" method="post" name="theForm"
+      onsubmit="checkTheNumber(); return false;">
+  Enter a number: <input type="text" name="theNumber" id="theNumber" />
 
   <br />
   <br />
 
-  <input type="submit" value="Check the Area Code" />
+  <input type="submit" value="Check the Number" />
 
 </form>
-
 </body>
-
 </html>
